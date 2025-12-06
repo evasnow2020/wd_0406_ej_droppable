@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <style>
+      #movimiento {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000;
+        overflow: auto;
+        padding: 5px;
+      }
+
+      #movimiento2 {
+        width: 250px;
+        height: 250px;
+        border: 1px solid #000;
+        overflow: auto;
+        padding: 5px;
+        position: relative;
+        left: 200px;
+        top: 30px;
+      }
+    </style>
+    <script>
+      var x;
+      x = $(document);
+      x.ready(iniciar);
+      function iniciar() {
+        var x = $("#movimiento");
+        x.draggable();
+        x = $("#movimiento2");
+        x.droppable({ drop: suelto });
+      }
+      function suelto() {
+        var x = $("#movimiento2");
+        x.css("background-color", "blue");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="movimiento">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, amet
+      dignissimos ducimus porro blanditiis reprehenderit nisi. Pariatur, placeat
+      itaque laudantium ducimus repellendus consectetur distinctio inventore
+      quos. Excepturi similique consequuntur quam?
+    </div>
+    <div id="movimiento2">Soltar aqui</div>
+  </body>
+</html>
